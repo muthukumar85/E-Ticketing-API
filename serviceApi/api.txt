@@ -1,0 +1,135 @@
+
+
+user
+
+POST /users/signup =>{
+    parameters:{
+        username : String       
+        email : String
+        password : String
+        mobile : String
+        role : String
+        created_by : Id( integer )
+        created_by_role : String
+    }
+}
+
+POST /users/login =>{
+    parameters:{
+        mobile : String
+        password : String
+    }
+}
+
+GET /users/gettickets =>{
+    parameters:{
+        user_id : ID ( integer )
+    }
+}
+
+ticket
+
+POST /ticket/create =>{
+    parameters:{
+        user_id : Id( integer )
+        client_id : Id( integer )
+        status : String
+        state : String
+        subject : String
+        description : String
+        priority : String
+        type : String
+        units : String
+    }
+}
+
+
+superAdmin
+
+POST /superadmin/getgraph =>{
+    parameters:{
+        created_id : Id( integer ) -> superAdmin ID
+    }
+}
+
+POST /superadmin/getclientwisedashboard =>{
+    parameters:{
+        created_id : Id( integer ) -> superAdmin ID
+    }
+}
+
+POST /superadmin/getreports =>{
+    parameters:{
+        created_id : Id( integer ) -> superAdmin ID
+    }
+}
+
+POST /superadmin/getclients =>{
+    parameters:{
+        created_id : Id( integer ) -> superAdmin ID
+    }
+}
+
+POST /superadmin/getusers =>{
+    parameters:{
+        created_id : Id( integer ) -> superAdmin ID
+    }
+}
+
+POST /superadmin/gettickets =>{
+    parameters:{
+        created_id : Id( integer ) -> superAdmin ID
+    }
+}
+
+PUT /superadmin/postsolution =>{
+    parameters:{
+        ticket_id : Id( integer ),
+        solution : String
+    }
+}
+
+
+client_admin
+
+POST /clientadmin/getgraph =>{
+    parameters:{
+        client_id : Id( integer ) -> clientAdmin ID
+    }
+}
+
+POST /clientadmin/getreports =>{
+    parameters:{
+        client_id : Id( integer ) -> clientAdmin ID
+    }
+}
+
+POST /clientadmin/gettickets =>{
+    parameters:{
+        client_id : Id( integer ) -> clientAdmin ID
+    }
+}
+
+POST /clientadmin/getusers =>{
+    parameters:{
+        client_id : Id( integer ) -> clientAdmin ID
+    }
+}
+
+POST /clientadmin/getunits =>{
+    parameters:{
+        client_id : Id( integer ) -> clientAdmin ID
+    }
+}
+
+POST /clientadmin/createunits =>{
+    parameters:{
+        unit_number : String
+        unit_name : String 
+        unit_address : String
+        created_by : Id( integer ) -> clientAdmin ID
+    }
+}
+
+
+
